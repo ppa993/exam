@@ -1,6 +1,6 @@
 [build]
   publish = "public"
-  command = "yarn run build"
-  functions = "lambda"
+  command = "yarn run build && npm install && npm run build:lambda"
+  functions = "functions"
 [build.environment]
   YARN_VERSION = "1.7.0"

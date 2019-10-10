@@ -58,7 +58,10 @@
     "stylefmt": "^6.0.3",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
-    "write-good": "^1.0.1"
+    "write-good": "^1.0.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "serverless-http": "^1.6.0"
   },
   "keywords": [
     "gatsby"
