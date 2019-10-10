@@ -21,7 +21,10 @@ export default class Exam extends React.Component {
 
   state = {
     result: [],
-    finalResult: {},
+    finalResult: {
+      result: 0,
+      total: 0
+    },
     completed: false,
     scrolled: false
   }
