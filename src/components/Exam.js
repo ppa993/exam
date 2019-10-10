@@ -76,8 +76,8 @@ export default class Exam extends React.Component {
   }
 
   onSubmitForm = async event => {
-    this.onTimeOut();
     event.preventDefault();
+    this.onTimeOut();
     const { result } = this.state;
     await axios.post(`${config.apiUrl}/submit`, { data: result })
       .then(res => {
