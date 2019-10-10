@@ -45,7 +45,8 @@ const config = {
   ],
   copyright: "© 2019 AnST", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#ffffff", // Used for setting manifest and progress theme colors.
-  backgroundColor: "#e0e0e0" // Used for setting manifest background color.
+  backgroundColor: "#e0e0e0", // Used for setting manifest background color.
+  apiUrl: "/.netlify/functions/server"
 };
 
 // Validate

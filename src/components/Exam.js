@@ -3,6 +3,7 @@ import axios from 'axios';
 import Helmet from "react-helmet";
 import Countdown from 'react-countdown-now';
 import questions from "../../data/questions";
+import config from "../../data/SiteConfig";
 
 const date = Date.now() + 900000;
 
@@ -76,7 +77,7 @@ export default class Exam extends React.Component {
     event.preventDefault();
     this.onTimeOut();
     const { result } = this.state;
-    await axios.post(`https://api.anst.dev/.netlify/functions/server/submit`, { data: result })
+    await axios.post(`${config.apiUrl}/submit`, { data: result })
       .then(res => {
         console.log(res);
         console.log(res.data);
