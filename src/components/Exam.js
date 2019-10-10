@@ -4,6 +4,7 @@ import Helmet from "react-helmet";
 import Countdown from 'react-countdown-now';
 import questions from "../../data/questions";
 import config from "../../data/SiteConfig";
+import Result from "./Result";
 
 const date = Date.now() + 900000;
 
@@ -20,6 +21,7 @@ export default class Exam extends React.Component {
 
   state = {
     result: [],
+    finalResult: {},
     completed: false,
     scrolled: false
   }
@@ -74,17 +76,19 @@ export default class Exam extends React.Component {
   }
 
   onSubmitForm = async event => {
-    event.preventDefault();
     this.onTimeOut();
+    event.preventDefault();
     const { result } = this.state;
     await axios.post(`${config.apiUrl}/submit`, { data: result })
       .then(res => {
-        console.log(res);
-        console.log(res.data);
+        this.setState({finalResult: res.data})
+        this.setState({completed: true})
       })
   }
 
   render() {
+    if (this.state.completed) return <Result data={this.state.finalResult} />
+
     return (
       <>
         <Helmet 
