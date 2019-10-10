@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 import Helmet from "react-helmet";
 import Countdown from 'react-countdown-now';
 import questions from "../../data/questions";
@@ -74,7 +75,12 @@ export default class Exam extends React.Component {
   onSubmitForm = async event => {
     event.preventDefault();
     this.onTimeOut();
-    alert(JSON.stringify(this.state.result))
+    const { result } = this.state;
+    await axios.post(`https://api.anst.dev/.netlify/functions/server/submit`, { data: result })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
   }
 
   render() {
