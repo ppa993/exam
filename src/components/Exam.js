@@ -40,6 +40,7 @@ export default class Exam extends React.Component {
     window.removeEventListener('scroll', this.navOnScroll)
   }
 
+  // eslint-disable-next-line class-methods-use-this
   onTimeOut() {
     const form = document.getElementById("exam");
     const elements = form.elements;
@@ -47,7 +48,6 @@ export default class Exam extends React.Component {
         if (elements[i].type !== "submit")
           elements[i].disabled = true;
     }
-    this.state.completed = true;
   }
 
   navOnScroll = () => {
@@ -82,11 +82,14 @@ export default class Exam extends React.Component {
     event.preventDefault();
     this.onTimeOut();
     const { result } = this.state;
-    await axios.post(`${config.apiUrl}/submit`, { data: result })
-      .then(res => {
-        this.setState({finalResult: res.data})
-        this.setState({completed: true})
-      })
+    
+    try {
+      const res = await axios.post(`${config.apiUrl}/submit`, { data: result });
+      this.setState({finalResult: res.data})
+      this.setState({completed: true})
+    } catch (e) {
+      console.log(`Axios request failed: ${e}`);
+    }
   }
 
   render() {
