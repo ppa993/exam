@@ -80,8 +80,8 @@
     "lint:md": "remark content/posts/",
     "write-good": "write-good $(glob 'content/posts/**/*.md')",
     "format:js": "prettier '**/*.{js,jsx}' --write",
-    "start:lambda": "netlify-lambda serve functions",
-    "build:lambda": "netlify-lambda build functions"
+    "start:lambda": "netlify-lambda serve express",
+    "build:lambda": "netlify-lambda build express"
   },
   "remarkConfig": {
     "plugins": [
