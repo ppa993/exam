@@ -4,7 +4,8 @@ import Helmet from "react-helmet";
 export default class Result extends React.Component {
 
   render() {
-    const { data } = this.props;
+    let { data } = this.props;
+    data = data || { result: 0, total: 0 };
     return (
       <>
         <Helmet 
