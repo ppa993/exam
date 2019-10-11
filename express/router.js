@@ -9,50 +9,51 @@ router.get('/', (req, res) => {
 
 /*
  * GET dish list.
-router.get('/', (req, res) => {
-    var result = req.body;
-    var count = 0;
-    result.forEach(item => {
-        if (questions.some(q => q.question === item.question && q.answer === item.answer)) count++;
-    })
-    res.json({result: count});
-});
  */
-
-/*
- * GET dish by ID.
-router.get('/:id', function (req, res) {
+router.get('/exam', (req, res) => {
     var db = req.db;
-    var collection = db.get('dishes');
-    var articalID = req.params.id;
-    collection.find({ '_id': articalID }, {}, function (e, docs) {
+    var collection = db.get('records');
+    collection.find({}, {}, function (e, docs) {
         res.json(docs);
     });
 });
+
+/*
+ * GET dish by ID.
  */
+router.get('/exam/:id', function (req, res) {
+    var db = req.db;
+    var collection = db.get('records');
+    var nric = req.params.id;
+    collection.findOne({ 'nric': nric }, {}, function (e, docs) {
+        res.json(docs);
+    });
+});
 
 /*
  * POST to add new dish.
  */
-router.post('/submit', (req, res) => {
-    var result = req.body.data;
+router.post('/exam', (req, res) => {
+    var record = req.body;
     var count = 0;
-    result.forEach(item => {
+    record.data.forEach(item => {
         if (questions.some(q => q.question === item.question && q.answer === item.answer)) count++;
     })
-    res.json({result: count, total: questions.length});
-});
 
-/*
- * DELETE to delete dish.
-router.delete('/:id', function(req, res) {
+    var nr = {
+        nric: record.nric,
+        result: count,
+        total: questions.length,
+        time: Date.now()
+    } 
+
     var db = req.db;
-    var collection = db.get('dishes');
-    var articalToDelete = req.params.id;
-    collection.remove({ '_id': articalToDelete }, function(err) {
-        res.send((err === null) ? { msg: '' } : { msg:'error: ' + err });
+    var collection = db.get('records');
+    collection.insert(nr, function(err, result){
+        res.send(
+            (err === null) ? { msg: '' } : { msg: err }
+        );
     });
 });
- */
 
 module.exports = router;

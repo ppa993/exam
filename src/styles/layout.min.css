@@ -8,6 +8,7 @@
 
 body {
   background-image: url(../../content/images/bg.jpg);
+  background-color: #ce763b;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -231,7 +232,7 @@ a {
   border-radius: 0; }
 
 .jumbotron {
-  background-color: #FaFaFa;
+  background-color: #f2f7fb;
   padding-top: 80px;
   padding-bottom: 80px;
   position: relative;
@@ -414,12 +415,11 @@ footer {
 
 .form-control {
   font-size: 1.6rem;
-  margin-bottom: 15px;
   height: 38px;
   font-weight: 300; }
   .form-control:focus {
-    border-color: #f15e75;
-    box-shadow: 0 0 0 0.2rem rgba(253, 101, 90, 0.25); }
+    border-color: #f9792e;
+    box-shadow: 0 0 0 0.2rem #f39f37d9}
 
 #gtco-contact-form form label.error {
   margin-bottom: 15px;
@@ -460,8 +460,6 @@ footer {
     max-width: unset; } }
 
 @media (max-width: 992px) {
-  #navbar-nav-header .navbar-nav {
-    margin-top: 15px; }
   #gtco-header-navbar {
     padding-left: 15px;
     background-color: #fff; } }

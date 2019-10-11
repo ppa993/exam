@@ -1,11 +1,30 @@
 import React from "react";
+import axios from 'axios';
 import Helmet from "react-helmet";
+import config from "../../data/SiteConfig";
 
 export default class Result extends React.Component {
 
+  state = {
+    data: {
+      nric: '',
+      result: '',
+      total: '',
+      time: Date.now()
+    }
+  }
+
+  componentDidMount() {
+    const { nric } = this.props;
+    axios.get(`${config.apiUrl}/exam/${nric}`)
+    .then(res => {
+      this.setState({data: res.data})
+    });
+  }
+
   render() {
-    let { data } = this.props;
-    data = data || { result: 0, total: 0 };
+    const { data } = this.state;
+    const date = new Date(data.time);
     return (
       <>
         <Helmet 
@@ -20,7 +39,10 @@ export default class Result extends React.Component {
           <div className="container">
             <div className="section-content blog-content">
               <div className="row">
-                <span>Hello, this is your result: {data.result}/{data.total}</span>
+                <div>
+                  <span>Hello {data.nric}, this is your result: {data.result}/{data.total}</span><br />
+                  <span>Completed at {date.toDateString()}</span>
+                </div>
               </div>
             </div>
           </div>

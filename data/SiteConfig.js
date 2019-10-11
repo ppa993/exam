@@ -1,4 +1,5 @@
 const config = {
+  dev: false,
   siteTitle: "An ST", // Site title.
   siteTitleShort: "An ST", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: "An ST", // Alternative site title for SEO.
@@ -66,5 +67,8 @@ if (config.siteUrl.substr(-1) === "/")
 // Make sure siteRss has a starting forward slash
 if (config.siteRss && config.siteRss[0] !== "/")
   config.siteRss = `/${config.siteRss}`;
+
+if (config.dev) 
+  config.apiUrl = 'http://localhost:3000/.netlify/functions/server'
 
 module.exports = config;

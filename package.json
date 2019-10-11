@@ -33,6 +33,7 @@
     "node-sass": "^4.11.0",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.14",
     "react-countdown-now": "^2.1.1",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
@@ -40,7 +41,8 @@
     "react-twitter-widgets": "^1.7.1",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
-    "url-join": "^4.0.0"
+    "url-join": "^4.0.0",
+    "monk": "^7.1.0"
   },
   "devDependencies": {
     "netlify-lambda": "^1.4.5",

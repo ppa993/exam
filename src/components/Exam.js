@@ -4,16 +4,13 @@ import Helmet from "react-helmet";
 import Countdown from 'react-countdown-now';
 import questions from "../../data/questions";
 import config from "../../data/SiteConfig";
-import Result from "./Result";
 
 const date = Date.now() + 900000;
 
 const renderer = ({ minutes, seconds, completed }) => {
   if (completed) {
-    // Render a complete state
     return <span>Time out!</span>;
   } 
-  // Render a countdown
   return (<span>{minutes}:{seconds}</span>);
 };
 
@@ -21,33 +18,18 @@ export default class Exam extends React.Component {
 
   state = {
     result: [],
-    finalResult: {
-      result: 0,
-      total: 0
-    },
-    completed: false,
     scrolled: false
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.navOnScroll)
     setTimeout(() => {
-      this.onTimeOut();
+      this.timeOut();
     }, 900000)
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.navOnScroll)
-  }
-
-  // eslint-disable-next-line class-methods-use-this
-  onTimeOut() {
-    const form = document.getElementById("exam");
-    const elements = form.elements;
-    for (let i = 0; i < elements.length; i += 1) {
-        if (elements[i].type !== "submit")
-          elements[i].disabled = true;
-    }
   }
 
   navOnScroll = () => {
@@ -73,28 +55,31 @@ export default class Exam extends React.Component {
         return temp;
       })
     }
-
-    this.setState({ result });
-
+    this.state.result = result;
   }
 
   onSubmitForm = async event => {
     event.preventDefault();
-    this.onTimeOut();
+    this.timeOut();
     const { result } = this.state;
+    const { nric, examCompleted } = this.props;
     
-    try {
-      const res = await axios.post(`${config.apiUrl}/submit`, { data: result });
-      this.setState({finalResult: res.data})
-      this.setState({completed: true})
-    } catch (e) {
-      console.log(`Axios request failed: ${e}`);
+    await axios.post(`${config.apiUrl}/exam`, { nric, data: result })
+    .then(() => {
+      examCompleted();
+    });
+  }
+
+  timeOut() {
+    const form = document.getElementById("exam");
+    const elements = form.elements;
+    for (let i = 0; i < elements.length; i += 1) {
+        if (elements[i].type !== "submit")
+          elements[i].disabled = true;
     }
   }
 
   render() {
-    if (this.state.completed) return <Result data={this.state.finalResult} />
-
     return (
       <>
         <Helmet 
@@ -105,7 +90,7 @@ export default class Exam extends React.Component {
         />
         <nav id="gtco-header-navbar" className="navbar navbar-expand-lg py-4">
           <div className="container">
-            <div className="collapse navbar-collapse" id="navbar-nav-header">
+            <div className="flex flex-grow-1" id="navbar-nav-header">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
                   <span><Countdown date={date} renderer={renderer} /></span>
