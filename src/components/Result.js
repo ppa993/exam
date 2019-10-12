@@ -2,6 +2,7 @@ import React from "react";
 import axios from 'axios';
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
+import { formatDate } from '../utils/global';
 
 export default class Result extends React.Component {
 
@@ -41,7 +42,7 @@ export default class Result extends React.Component {
               <div className="row">
                 <div>
                   <span>Hello {data.nric}, this is your result: {data.result}/{data.total}</span><br />
-                  <span>Completed at {date.toDateString()}</span>
+                  <span>Completed at {`${date.toLocaleTimeString()  } ${  formatDate(date)}`}</span>
                 </div>
               </div>
             </div>

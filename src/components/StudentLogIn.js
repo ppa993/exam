@@ -78,7 +78,7 @@ export default class StudentLogIn extends React.Component {
             <Button variant="secondary" onClick={this.handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={this.handleNext}>
+            <Button variant="primary" onClick={this.handleNext} className="btn-cyan">
               {this.state.completed ? 'View result' : 'Start'}
             </Button>
           </Modal.Footer>

@@ -11,7 +11,7 @@ const config = {
   siteRss: "/rss.xml", // Path to the RSS file.
   googleAnalyticsID: "UA-143218778-1", // GA tracking ID.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
-  dateFormat: "MMMM Do, YYYY", // Date format for display.
+  dateFormat: "DD/MM/YYYY", // Date format for display.
   anstLinks: {
     github: {
       url: "https://github.com/ppa993",

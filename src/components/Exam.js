@@ -5,8 +5,6 @@ import Countdown from 'react-countdown-now';
 import questions from "../../data/questions";
 import config from "../../data/SiteConfig";
 
-const date = Date.now() + 900000;
-
 const renderer = ({ minutes, seconds, completed }) => {
   if (completed) {
     return <span>Time out!</span>;
@@ -18,10 +16,12 @@ export default class Exam extends React.Component {
 
   state = {
     result: [],
-    scrolled: false
+    scrolled: false,
+    date: Date.now()
   }
 
   componentDidMount() {
+    this.setState({date: Date.now() + 900000})
     window.addEventListener('scroll', this.navOnScroll)
     setTimeout(() => {
       this.timeOut();
@@ -93,7 +93,7 @@ export default class Exam extends React.Component {
             <div className="flex flex-grow-1" id="navbar-nav-header">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <span><Countdown date={date} renderer={renderer} /></span>
+                  <span><Countdown date={this.state.date} renderer={renderer} /></span>
                 </li>
               </ul>
             </div>

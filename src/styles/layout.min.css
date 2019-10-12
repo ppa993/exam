@@ -113,8 +113,7 @@ button:focus {
 
 .btn:hover,
 a:hover {
-  text-decoration: none;
-  color: #d05165; }
+  text-decoration: none; }
 
 .btn-group-lg > .btn, .btn-lg {
   padding: 1rem; }
@@ -167,10 +166,8 @@ a {
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
-  color: #333;
   text-shadow: none;
   /* Prevent inheritance from `body` */
-  background-color: #fff;
   border: .05rem solid #fff; }
 
 .btn:not(.btn-link):hover {
