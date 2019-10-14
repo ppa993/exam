@@ -41,7 +41,7 @@ export default class StudentLogIn extends React.Component {
         <Helmet 
           title="Input NRIC" 
         />
-        <section id="gtco-contact-form" className="bg-white">
+        <section id="gtco-contact-form" className="bg-grey">
           <div className="container">
             <div className="section-content">
               <div className="title-wrap">

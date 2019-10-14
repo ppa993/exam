@@ -7,11 +7,6 @@
   overflow-x: hidden; }
 
 body {
-  background-image: url(../../content/images/bg.jpg);
-  background-color: #ce763b;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   position: relative;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -26,9 +21,9 @@ body {
     position: fixed;
     opacity: .8;
     z-index: -1;
-    background: #f12711;
-    background: -webkit-linear-gradient(to right, #f5af19, #f12711);
-    background: linear-gradient(to right, #f5af19, #f12711); }
+    background: rgba(0,123,255,0.5);
+    background: -webkit-linear-gradient(to top, rgba(0, 231, 255, 0.09), rgba(0, 137, 255, 0.34));
+    background: linear-gradient(to top, rgba(0, 231, 255, 0.09), rgba(0, 137, 255, 0.34)); }
 
 .boxed-page {
   margin: 0 auto;
@@ -36,7 +31,8 @@ body {
   margin-bottom: 6rem;
   position: relative;
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
-  border-radius: 5px; }
+  border-radius: 5px; 
+  overflow: hidden; }
 
 @media (min-width: 1200px) {
   .boxed-page {
@@ -123,7 +119,8 @@ a:hover {
 
 .section-content {
   padding-top: 40px;
-  padding-bottom: 40px; }
+  padding-bottom: 40px; 
+  min-height: 350px; }
 
 .title-wrap,
 .section-title {
@@ -317,7 +314,8 @@ a {
   transition: all 0.3s ease-in-out;
   background-color: #f7f8f9;
   border-radius: 3px;
-  overflow: hidden; }
+  overflow: hidden;
+  cursor: pointer; }
   .blog-item:hover {
     box-shadow: 0 5px 15px -5px #333;
     transform: translateY(-6px);
@@ -329,7 +327,7 @@ a {
     -webkit-box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15); }
 
 .bg-grey .blog-item {
-  background-color: #fff; }
+  background-color: #35b8ad21; }
 
 .blog-item-wrapper {
   margin-bottom: 30px; }
@@ -414,9 +412,6 @@ footer {
   font-size: 1.6rem;
   height: 38px;
   font-weight: 300; }
-  .form-control:focus {
-    border-color: #f9792e;
-    box-shadow: 0 0 0 0.2rem #f39f37d9}
 
 #gtco-contact-form form label.error {
   margin-bottom: 15px;

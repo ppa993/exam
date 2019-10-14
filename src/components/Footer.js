@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 export default class Footer extends Component {
   render() {
     return (
-      <footer className="mastfoot mb-3 bg-white py-4 border-top">
+      <footer className="mastfoot bg-white py-4 border-top">
         <div className="inner container">
           <div className="row">
             <div className="col-md-6 d-flex align-items-center justify-content-md-start justify-content-center">
