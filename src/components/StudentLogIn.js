@@ -49,7 +49,7 @@ export default class StudentLogIn extends React.Component {
                 <p className="section-sub-title">Please input the NRIC provided to log in to the test</p>
               </div>
               <div className="row">
-                <div className="col-md-8 offset-md-2 contact-form-holder mt-4 mb-4">
+                <div className="col-md-6 offset-md-3 mt-4 mb-4">
                   <form name="contact-us" onSubmit={this.onSubmitForm}>
                     <div className="row">
                       <div className="col-md-12 form-input flex">

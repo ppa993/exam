@@ -30,6 +30,7 @@
     "gatsby-transformer-sharp": "^2.1.19",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
+    "monk": "^7.1.0",
     "node-sass": "^4.11.0",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
@@ -41,8 +42,7 @@
     "react-twitter-widgets": "^1.7.1",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
-    "url-join": "^4.0.0",
-    "monk": "^7.1.0"
+    "url-join": "^4.0.0"
   },
   "devDependencies": {
     "netlify-lambda": "^1.4.5",
