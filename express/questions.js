@@ -9,15 +9,15 @@ const questions = [
   },
   {
     question: 'cc34fa8f751a4995b4dbfa4d1d484ba5',
-    answer: 'B',
+    answer: 'D',
   },
   {
     question: 'cc34fa8f751a4995b4dbfa4d1d484ba6',
-    answer: 'B',
+    answer: 'A',
   },
   {
     question: 'cc34fa8f751a4995b4dbfa4d1d484ba7',
-    answer: 'B',
+    answer: 'C',
   },
   {
     question: 'cc34fa8f751a4995b4dbfa4d1d484ba8',
@@ -25,7 +25,7 @@ const questions = [
   },
   {
     question: 'cc34fa8f751a4995b4dbfa4d1d484ba9',
-    answer: 'B',
+    answer: 'D',
   },
   {
     question: 'cc34fa8f751a4995b4dbfa4d1d484ba0',
@@ -33,15 +33,11 @@ const questions = [
   },
   {
     question: 'cc34fa8f751a4995b4dbfa4d1d484bb1',
-    answer: 'B',
+    answer: 'C',
   },
   {
     question: 'cc34fa8f751a4995b4dbfa4d1d484bbb2',
-    answer: 'B',
-  },
-  {
-    question: 'cc34fa8f751a4995b4dbfa4d1d484bbb3',
-    answer: 'B',
+    answer: 'A',
   }
 ]
 
