@@ -42,7 +42,7 @@ export default class Result extends React.Component {
               <div className="row">
                 <div className="col-md-6 offset-md-4 mt-4 mb-4">
                   <span>Chào {data.nric}, bạn đã trả lời đúng {data.result}/{data.total} câu hỏi.</span><br />
-                  <span>Hoàn thành lúc {`${date.toLocaleTimeString()  } ${  formatDate(date)}`}</span>
+                  <span>Hoàn thành lúc {`${formatDate(date)} ${date.toLocaleTimeString()}`}</span>
                 </div>
               </div>
             </div>
