@@ -208,7 +208,7 @@ const questions =  [
   },
   {
     id: 'cc34fa8f751a4995b4dbfa4d1d484bbb2',
-    question: 'Hành động nào trong giao tiếp không làm đúng kĩ năng giao tiếp?',
+    question: 'Hành động nào trong giao tiếp làm đúng kĩ năng giao tiếp?',
     answer: 'A',
     answers: [
       {
