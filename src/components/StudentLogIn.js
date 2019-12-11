@@ -21,7 +21,7 @@ export default class StudentLogIn extends React.Component {
 
   onInputChange = async event => {
     const { value } = event.target;
-    this.state.nric = value.toUpperCase();
+    this.state.nric = value;
   }
 
   onSubmitForm = async event => {
@@ -39,22 +39,22 @@ export default class StudentLogIn extends React.Component {
     return (
       <>
         <Helmet 
-          title="Input NRIC" 
+          title="Đăng nhập" 
         />
         <section id="gtco-contact-form" className="bg-grey">
           <div className="container">
             <div className="section-content">
               <div className="title-wrap">
-                <h2 className="section-title">Log in</h2>
-                <p className="section-sub-title">Please input the NRIC provided to log in to the test</p>
+                <h2 className="section-title">Họ và Tên</h2>
+                <p className="section-sub-title">Để bắt đầu, vui lòng nhập họ tên</p>
               </div>
               <div className="row">
                 <div className="col-md-6 offset-md-3 mt-4 mb-4">
                   <form name="contact-us" onSubmit={this.onSubmitForm}>
                     <div className="row">
                       <div className="col-md-12 form-input flex">
-                        <input type="text" className="form-control mr-3 uppercase" placeholder="NRIC" onChange={this.onInputChange} />
-                        <button className="btn btn-secondary btn-cyan" name="submit">Log in</button>
+                        <input type="text" className="form-control mr-3" placeholder="Họ và tên" onChange={this.onInputChange} />
+                        <button className="btn btn-secondary btn-cyan" name="submit">Bắt đầu</button>
                       </div>
                     </div>
                   </form>
@@ -65,21 +65,21 @@ export default class StudentLogIn extends React.Component {
         </section>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Attention!</Modal.Title>
+            <Modal.Title>Chú ý!</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {
               this.state.completed ? 
-                <span>Hello {this.state.nric}, you have completed the test</span> :
-                <span>Are you ready to take the test?</span> 
+                <span>Chào {this.state.nric}, bạn đã hoàn thành bài kiểm tra!</span> :
+                <span>Bạn đã sẵn sàng?</span> 
             }
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.handleClose}>
-              Close
+              Đóng
             </Button>
             <Button variant="primary" onClick={this.handleNext} className="btn-cyan">
-              {this.state.completed ? 'View result' : 'Start'}
+              {this.state.completed ? 'Xem kết quả' : 'Bắt đầu'}
             </Button>
           </Modal.Footer>
         </Modal>

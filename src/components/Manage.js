@@ -52,21 +52,21 @@ export default class Manage extends React.Component {
     return (
       <>
         <Helmet 
-          title="Manage" 
+          title="Kết quả kiểm tra" 
         />
         <section id="gtco-contact-form" className="bg-white">
           <div className="container">
             <div className="log-out">
-              <button className="btn btn-cyan" name="submit" onClick={this.onLogOut}>Log out</button>
+              <button className="btn btn-cyan" name="submit" onClick={this.onLogOut}>Thoát ra</button>
             </div>
             <div className="section-content">
               <div className="title-wrap">
-                <h2 className="section-title">Hello</h2>
+                <h2 className="section-title">Xin chào!</h2>
               </div>
               <div className="row">
                 <div className="col-md-8 offset-md-2 mt-4 mb-4 test">
                   <form>
-                    <input className="form-control" name="searchTerm" value={searchTerm} placeholder="Type here to filter posts..." onChange={this.handleChange} />
+                    <input className="form-control" name="searchTerm" value={searchTerm} placeholder="Nhập tên để tìm kiếm..." onChange={this.handleChange} />
                   </form>
                   <ResultListing results={filteredResults} />
                 </div>

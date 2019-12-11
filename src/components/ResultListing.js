@@ -13,15 +13,15 @@ export default class ResultListing extends React.Component {
           <thead>
             <tr>
               <th>#</th>
-              <th className="text-left">Name</th>
-              <th>Score</th>
-              <th>Time completed</th>
+              <th className="text-left">Họ và tên</th>
+              <th>Điểm</th>
+              <th>Thời gian hoàn thành</th>
             </tr>
           </thead>
           <tbody>
             {results.length === 0 ? (
               <tr>
-                <td colSpan="4">There is no result!</td>
+                <td colSpan="4">Không có kết quả nào!</td>
               </tr>
             ) :
               results.map((result, index) => {

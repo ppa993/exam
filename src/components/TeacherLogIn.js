@@ -31,7 +31,7 @@ export default class TeacherLogIn extends React.Component {
     return (
       <>
         <Helmet 
-          title="Log in to teacher page" 
+          title="Đăng nhập vào trang giáo viên" 
           bodyAttributes={{
             class: `fade-in`,
           }}
@@ -40,21 +40,21 @@ export default class TeacherLogIn extends React.Component {
           <div className="container">
             <div className="section-content">
               <div className="title-wrap">
-                <h2 className="section-title">Log in</h2>
-                <p className="section-sub-title">Please log in with your username and password</p>
+                <h2 className="section-title">Đăng nhập</h2>
+                <p className="section-sub-title">Vui lòng nhập tên đăng nhập và mật khẩu</p>
               </div>
               <div className="row">
                 <div className="col-md-6 offset-md-3 mt-4 mb-4">
                   <form name="contact-us" onSubmit={this.onSubmitForm}>
                     <div className="row">
                       <div className="col-md-12 mb-3 form-input">
-                        <input type="text" className="form-control" placeholder="Username" onChange={this.onUsernameChange} />
+                        <input type="text" className="form-control" placeholder="Tên đăng nhập" onChange={this.onUsernameChange} />
                       </div>
                       <div className="col-md-12 mb-5 form-input">
-                        <input type="password" className="form-control" placeholder="Password" onChange={this.onPasswordChange} />
+                        <input type="password" className="form-control" placeholder="Mật khẩu" onChange={this.onPasswordChange} />
                       </div>
                       <div className="col-md-12 form-input">
-                        <button className="btn btn-cyan" name="submit">Log in</button>
+                        <button className="btn btn-cyan" name="submit">Đăng nhập</button>
                       </div>
                     </div>
                   </form>

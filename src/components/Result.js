@@ -29,20 +29,20 @@ export default class Result extends React.Component {
     return (
       <>
         <Helmet 
-          title="Result" 
+          title="Kết quả" 
         />
         <div className="jumbotron d-flex align-items-center">
           <div className="container text-center">
-            <h1 className="display-2 mb-4 single-blog-title"><span>Your result</span></h1>
+            <h1 className="display-2 mb-4 single-blog-title"><span>Kết quả của bạn</span></h1>
           </div>
         </div> 
         <section id="gtco-single-content" className="bg-white">
           <div className="container">
             <div className="section-content blog-content">
               <div className="row">
-                <div>
-                  <span>Hello {data.nric}, this is your result: {data.result}/{data.total}</span><br />
-                  <span>Completed at {`${date.toLocaleTimeString()  } ${  formatDate(date)}`}</span>
+                <div className="col-md-6 offset-md-4 mt-4 mb-4">
+                  <span>Chào {data.nric}, bạn đã trả lời đúng {data.result}/{data.total} câu hỏi.</span><br />
+                  <span>Hoàn thành lúc {`${date.toLocaleTimeString()  } ${  formatDate(date)}`}</span>
                 </div>
               </div>
             </div>

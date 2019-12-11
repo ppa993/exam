@@ -83,7 +83,7 @@ export default class Exam extends React.Component {
     return (
       <>
         <Helmet 
-          title="Exam" 
+          title="Bài thi" 
           bodyAttributes={{
             class: `${this.state.scrolled ? 'single-layout not-on-top' : 'single-layout'}`,
           }}
@@ -101,7 +101,7 @@ export default class Exam extends React.Component {
         </nav>
         <div className="jumbotron d-flex align-items-center">
           <div className="container text-center">
-            <h1 className="display-2 mb-4 single-blog-title"><span>Exam</span></h1>
+            <h1 className="display-2 mb-4 single-blog-title"><span>Bài thi</span></h1>
           </div>
         </div> 
         <section id="gtco-single-content" className="bg-white">
@@ -124,7 +124,7 @@ export default class Exam extends React.Component {
                       </div>
                     )
                   })}
-                  <button className="btn btn-block btn-secondary btn-red">Submit</button>
+                  <button className="btn btn-block btn-secondary btn-red">Hoàn thành</button>
                 </form>
               </div>
             </div>
