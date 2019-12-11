@@ -24,7 +24,7 @@ const questions =  [
   },
   {
     id: 'cc34fa8f751a4995b4dbfa4d1d484ba4',
-    question: 'Theo em trong các tình huống/ phưng án sau đây, phương án nào được xem là đó là cách nhìn nhận và đánh giá vấn đề khách quan, tích cực?',
+    question: 'Theo em trong các tình huống/ phương án sau đây, phương án nào được xem là đó là cách nhìn nhận và đánh giá vấn đề khách quan, tích cực?',
     answer: 'C',
     answers: [
       {
