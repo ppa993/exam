@@ -7,7 +7,7 @@ const config = {
   siteUrl: "https://www.anst.dev", // Domain of your website without pathPrefix.
   repo: 'https://github.com/ppa993/anst',
   pathPrefix: "", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-  siteDescription: "A website of An ST.", // Website description used for RSS feeds/meta description tag.
+  siteDescription: "An examination website.", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   googleAnalyticsID: "UA-143218778-1", // GA tracking ID.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.

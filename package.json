@@ -1,6 +1,6 @@
 {
-  "name": "an-st",
-  "description": "A website of An ST",
+  "name": "exam",
+  "description": "An examination website",
   "version": "1.1.0",
   "author": "An ST <anst@anst.dev>",
   "dependencies": {
