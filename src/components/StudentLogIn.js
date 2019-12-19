@@ -30,7 +30,9 @@ export default class StudentLogIn extends React.Component {
     .then(res => {
       this.setState({show: true});
       if (res.data) {
-        this.setState({completed: true})
+        this.setState({completed: true});
+      } else {
+        this.setState({completed: false});
       }
     });
   }
