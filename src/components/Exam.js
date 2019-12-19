@@ -26,10 +26,17 @@ export default class Exam extends React.Component {
     setTimeout(() => {
       this.timeOut();
     }, 900000)
+    window.addEventListener('beforeunload', this.beforeunload.bind(this));
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.navOnScroll)
+    window.removeEventListener('beforeunload', this.beforeunload.bind(this));
+  }
+
+  beforeunload(e) {
+    e.preventDefault();
+    e.returnValue = true;
   }
 
   navOnScroll = () => {
